@@ -43,10 +43,14 @@
                         
                         <td><a href="{{ url('admin/edit_user') }}/{{ $user->id }}">{{ $user->name }}</a></td>
                         <td>@if ($user->role == 0)
-            						    	Super Admin
-            							@else
-            							    Admin
-            							@endif
+            						    	   Super Admin
+            							   @endif
+                             @if ($user->role == 1)
+                                Admin
+                             @endif
+                             @if ($user->role == 2)
+                                Poster
+                             @endif
             						</td>
                         <td>{{ $user->updated_at }}</td>
                         <td><a style="color:red; font-size:15px"  onClick="javascript:return window.confirm('Bạn muốn xóa admin này?');" href="{{ url('admin/xoa-admin') }}/{{ $user->id }}"><i class="fa fa-close"></i></a></td>

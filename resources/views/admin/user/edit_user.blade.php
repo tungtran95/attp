@@ -53,6 +53,7 @@
                       <p class="help-block"><img style="width:100px" src="{{ url('/public/upload/admin') }}/{{ $arr->c_img }}"></p>
                       <p class="help-block">Example block-level help text here.</p>
                     </div>
+                    @if (Auth::user()->role==0)
                    	 <div class="form-group">
                    	 	<label for="optionsRadios">Phần quyền</label>
                       <div class="radio">
@@ -67,13 +68,22 @@
                           	Admin
                         </label>
                       </div>
-                    </div>
 
+                       <div class="radio">
+                        <label>
+                          <input type="radio" name="role" id="optionsRadios" value="2" @if($arr->role ==2 )checked @endif >
+                            Poster
+                        </label>
+                      </div>
+                    </div>
+                    @else
+                        <input type="hidden" name="role"  value="{{ $arr->role}}">
+                    @endif
                    
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">
-                    <button type="submit" class="btn btn-danger"><i class="fa fa-user-plus" aria-hidden="true"></i> Chỉnh sửa</button>
+                    <button type="submit" class="btn btn-danger" onclick="javascript:alert('Chỉnh sửa thông tin thành công!');"><i class="fa fa-user-plus" aria-hidden="true"></i> Chỉnh sửa</button>
                     <a href="{{ url('/admin/quan-tri-vien')}}"><button type="button" class="btn btn-primary"><i class="fa fa-undo" aria-hidden="true"></i> Trở về</button></a>
                   </div>
                 </form>

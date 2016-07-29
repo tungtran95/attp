@@ -64,7 +64,19 @@
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
-             
+               <li class="dropdown user user-menu">
+                 <a href="{{ url('/admin/en')}}">
+                    <img src="{{ url('/public/images') }}/en.png">
+                  </a>
+              </li>
+
+              <li class="dropdown user user-menu">
+                 <a href="{{ url('/admin/vn')}}">
+                    <img src="{{ url('/public/images') }}/vn.png">
+                  </a>
+              </li>
+
+              
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -81,21 +93,11 @@
                     </p>
                   </li>
                   <!-- Menu Body -->
-                  <li class="user-body">
-                    <div class="col-xs-4 text-center">
-                      <a >Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a >Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a >Friends</a>
-                    </div>
-                  </li>
+                  
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="{{ url('/admin/sua-admin')}}/{{ Auth::user()->id }}" class="btn btn-default btn-flat">Profile</a>
+                      <a href="{{ url('/admin/edit_user')}}/{{ Auth::user()->id }}" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
                       <a href="{{ url('/logout')}}" class="btn btn-default btn-flat">Sign out</a>
@@ -142,13 +144,13 @@
             
              <li class="treeview">
               <a href="#">
-                <i class="fa fa-edit"></i> <span>Giới thiệu</span>
+                <i class="fa fa-bookmark-o"></i> <span>Giới thiệu</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('/admin/danh-muc-tu-van')}}"><i class="fa fa-circle-o"></i> Danh mục tư vấn</a></li>
+                <li><a href="{{ url('/admin/category_about')}}"><i class="fa fa-circle-o"></i> Danh mục giới thiệu</a></li>
                
-                 <li><a href="{{ url('/admin/danh-muc-tu-van')}}"><i class="fa fa-circle-o"></i> Danh sách bài viết</a></li>
+                 <li><a href="{{ url('/admin/about')}}"><i class="fa fa-circle-o"></i> Danh sách bài viết</a></li>
               </ul>
             </li>
             <!--=========================Lĩnh vực tư vấn=================================-->
@@ -157,12 +159,12 @@
             
              <li class="treeview">
               <a href="#">
-                <i class="fa fa-edit"></i> <span>Dịch vụ phân tích</span>
+                <i class="fa fa-pie-chart" aria-hidden="true"></i> <span>Dịch vụ phân tích</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('/admin/danh-muc-dich-vu')}}"><i class="fa fa-circle-o"></i> Danh mục dịch vụ khác</a></li>
-                <li><a href="{{ url('/admin/dich-vu')}}"><i class="fa fa-circle-o"></i> Dánh sách bài viết</a></li>
+                <li><a href="{{ url('/admin/category_service')}}"><i class="fa fa-circle-o"></i> Danh mục dịch vụ</a></li>
+                <li><a href="{{ url('/admin/service')}}"><i class="fa fa-circle-o"></i> Dánh sách bài viết</a></li>
                 
               </ul>
             </li>
@@ -172,12 +174,12 @@
             
              <li class="treeview">
               <a href="#">
-                <i class="fa fa-edit"></i> <span>Dịch vụ khác</span>
+                <i class="fa fa-line-chart" aria-hidden="true"></i> <span>Dịch vụ khác</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('/admin/danh-muc-dich-vu')}}"><i class="fa fa-circle-o"></i> Danh mục dịch vụ khác</a></li>
-                <li><a href="{{ url('/admin/dich-vu')}}"><i class="fa fa-circle-o"></i> Dánh sách bài viết</a></li>
+                <li><a href="{{ url('/admin/category_other')}}"><i class="fa fa-circle-o"></i> Danh mục dịch vụ khác</a></li>
+                <li><a href="{{ url('/admin/other')}}"><i class="fa fa-circle-o"></i> Dánh sách bài viết</a></li>
                 
               </ul>
             </li>
@@ -185,8 +187,8 @@
              <!--=========================News=================================-->
 
             <li>
-              <a href="{{ url('/admin/tin-tuc')}}">
-                <i class="fa fa-th"></i> <span>Nghiên cứu khoa học</span> <small class="label pull-right bg-yellow">hot</small>
+              <a href="{{ url('/admin/science')}}">
+                <i class="fa fa-pagelines" aria-hidden="true"></i><span>Nghiên cứu khoa học</span> <small class="label pull-right bg-green">succ</small>
               </a>
             </li>
 
@@ -194,8 +196,8 @@
             <!--=========================News=================================-->
 
             <li>
-              <a href="{{ url('/admin/tin-tuc')}}">
-                <i class="fa fa-th"></i> <span>Tin tức ATTP</span> <small class="label pull-right bg-yellow">hot</small>
+              <a href="{{ url('/admin/news')}}">
+                <i class="fa fa-tags" aria-hidden="true"></i><span>Tin tức ATTP</span> <small class="label pull-right bg-red">hot</small>
               </a>
             </li>
 
@@ -203,7 +205,7 @@
              <!--=========================News=================================-->
 
             <li>
-              <a href="{{ url('/admin/tin-tuc')}}">
+              <a href="{{ url('/admin/document')}}">
                 <i class="fa fa-th"></i> <span>Văn bản pháp luật</span> <small class="label pull-right bg-yellow">hot</small>
               </a>
             </li>
@@ -212,38 +214,34 @@
              <!--=========================News=================================-->
 
             <li>
-              <a href="{{ url('/admin/tin-tuc')}}">
+              <a href="{{ url('/admin/video')}}">
                 <i class="fa fa-video-camera"></i> <span>Phóng sự/ Thông điệp</span> <small class="label pull-right bg-yellow">hot</small>
               </a>
             </li>
-
+            <li>
+              <a href="{{ url('/admin/picture')}}">
+                <i class="fa fa-picture-o"></i> <span>Flickr ảnh</span> <small class="label pull-right bg-yellow">hot</small>
+              </a>
+            </li>
             <!--=========================News=================================-->
              <!--=========================News=================================-->
-
+              @if (Auth::user()->role < 2)
             <li>
-              <a href="{{ url('/admin/tin-tuc')}}">
-                <i class="fa fa-th"></i> <span>Hỏi đáp</span> <small class="label pull-right bg-yellow">hot</small>
+              <a href="{{ url('/admin/qa')}}">
+                <i class="fa fa-commenting-o"></i> <span>Hỏi đáp</span> <small class="label pull-right bg-yellow">hot</small>
               </a>
             </li>
 
             <!--=========================News=================================-->
-             <!--=========================News=================================-->
-
-            <li>
-              <a href="{{ url('/admin/tin-tuc')}}">
-                <i class="fa fa-comment"></i> <span>Bình luận</span> <small class="label pull-right bg-yellow">hot</small>
-              </a>
-            </li>
-
-            <!--=========================News=================================-->
+             
             <!--=========================Contact=================================-->
 
             <li>
-              <a href="{{ url('/admin/lien-he')}}">
-                <i class="fa fa-envelope-o"></i> <span>Liên hệ</span> <small class="label pull-right bg-blue"><i class="fa fa-commenting-o"></i> </small>
+              <a href="{{ url('/admin/contact')}}">
+                <i class="fa fa-envelope-o"></i> <span>Liên hệ</span> <small class="label pull-right bg-blue">contact </small>
               </a>
             </li>
-
+            @endif
             <!--=========================Contect=================================-->
             @if (Auth::user()->role==0)
              <li>
@@ -252,17 +250,19 @@
               </a>
             </li>
             @endif
+             @if (Auth::user()->role==0)
              <li>
-              <a href="{{ url('/admin/lien-he')}}">
-                <i class="fa fa-gears"></i> <span>Cấu hình</span> <small class="label pull-right bg-blue">imp </small>
+              <a href="{{ url('/admin/profile')}}">
+                <i class="fa fa-gears"></i> <span>Cấu hình</span> <small class="label pull-right bg-blue">set up </small>
               </a>
             </li>
+             @endif
              <li>
               <a href="{{ url('/logout')}}">
                 <i class="fa fa-sign-out" aria-hidden="true"></i> <span>Đăng xuất</span> <small class="label pull-right bg-red">logout</small>
               </a>
             </li>
-           
+          
             
            
           </ul>

@@ -8,15 +8,22 @@ use DB;
 use Request;
 use Hash;
 use Session;
+use Auth;
 class UserController extends Controller{
 
 	
 	//=====================================User==========================
 	public function list_user(){
 		//lay du lieu tu bang user, co su dung ham de phan trang
-		$data["users"] = DB::table("users")->orderBy('id', 'desc')->get();
-		$data["title"]="Quản trị viên";	
-		return view("admin.user.user",$data);
+		if(Auth::user()->role==0){
+			$data["users"] = DB::table("users")->orderBy('id', 'desc')->get();
+			$data["title"]="Quản trị viên";	
+			return view("admin.user.user",$data);
+		}
+		else {
+			$data["title"]="Admin's Page";
+			return view("admin.home",$data);
+		}
 	}
 
 	public function add_user(){

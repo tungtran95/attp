@@ -66,6 +66,12 @@
                           	Admin
                         </label>
                       </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="role" id="optionsRadios" value="2" >
+                            Poster
+                        </label>
+                      </div>
                     </div>
 
                    

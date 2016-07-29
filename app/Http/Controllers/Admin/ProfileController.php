@@ -55,8 +55,9 @@ class ProfileController extends Controller{
 			$c_facebook= Request::get("c_facebook");
 			$c_skype = Request::get("c_skype");
 			$c_yahoo= Request::get("c_yahoo");
+			$c_flickr= Request::get("c_flickr");
 			
-			DB::update("UPDATE tbl_profile SET c_name='$c_name',c_description='$c_description',c_content='$c_content',c_address='$c_address',c_phone='$c_phone',c_email='$c_email',c_facebook='$c_facebook',c_google_map='$c_google_map',c_skype='$c_skype',c_yahoo='$c_yahoo',c_keyword='$c_keyword' WHERE pk_profile_id=$id");
+			DB::update("UPDATE tbl_profile SET c_name='$c_name',c_description='$c_description',c_content='$c_content',c_address='$c_address',c_phone='$c_phone',c_email='$c_email',c_facebook='$c_facebook',c_google_map='$c_google_map',c_skype='$c_skype',c_yahoo='$c_yahoo',c_flickr='$c_flickr',c_keyword='$c_keyword' WHERE pk_profile_id=$id");
 			
 			return redirect("/admin/profile");
 			

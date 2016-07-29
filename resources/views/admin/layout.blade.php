@@ -188,7 +188,7 @@
 
             <li>
               <a href="{{ url('/admin/science')}}">
-                <i class="fa fa-pagelines" aria-hidden="true"></i><span>Nghiên cứu khoa học</span> <small class="label pull-right bg-green">succ</small>
+                <i class="fa fa-pagelines" aria-hidden="true"></i><span>Nghiên cứu khoa học</span> 
               </a>
             </li>
 
@@ -206,7 +206,7 @@
 
             <li>
               <a href="{{ url('/admin/document')}}">
-                <i class="fa fa-th"></i> <span>Văn bản pháp luật</span> <small class="label pull-right bg-yellow">hot</small>
+                <i class="fa fa-th"></i> <span>Văn bản pháp luật</span> <small class="label pull-right bg-blue">imp</small>
               </a>
             </li>
 
@@ -215,12 +215,12 @@
 
             <li>
               <a href="{{ url('/admin/video')}}">
-                <i class="fa fa-video-camera"></i> <span>Phóng sự/ Thông điệp</span> <small class="label pull-right bg-yellow">hot</small>
+                <i class="fa fa-video-camera"></i> <span>Phóng sự/ Thông điệp</span> 
               </a>
             </li>
             <li>
-              <a href="{{ url('/admin/picture')}}">
-                <i class="fa fa-picture-o"></i> <span>Flickr ảnh</span> <small class="label pull-right bg-yellow">hot</small>
+              <a href="{{ url('/admin/link')}}">
+                <i class="fa fa-exchange" aria-hidden="true"></i> <span>Liên kết website</span> 
               </a>
             </li>
             <!--=========================News=================================-->
@@ -228,7 +228,7 @@
               @if (Auth::user()->role < 2)
             <li>
               <a href="{{ url('/admin/qa')}}">
-                <i class="fa fa-commenting-o"></i> <span>Hỏi đáp</span> <small class="label pull-right bg-yellow">hot</small>
+                <i class="fa fa-commenting-o"></i> <span>Hỏi đáp</span> 
               </a>
             </li>
 
@@ -238,7 +238,7 @@
 
             <li>
               <a href="{{ url('/admin/contact')}}">
-                <i class="fa fa-envelope-o"></i> <span>Liên hệ</span> <small class="label pull-right bg-blue">contact </small>
+                <i class="fa fa-envelope-o"></i> <span>Liên hệ</span> 
               </a>
             </li>
             @endif
@@ -246,14 +246,14 @@
             @if (Auth::user()->role==0)
              <li>
               <a href="{{ url('/admin/quan-tri-vien')}}">
-                <i class="fa fa-user"></i> <span>Quản trị viên</span> <small class="label pull-right bg-green">imp</small>
+                <i class="fa fa-user"></i> <span>Quản trị viên</span> <small class="label pull-right bg-green">admin</small>
               </a>
             </li>
             @endif
              @if (Auth::user()->role==0)
              <li>
               <a href="{{ url('/admin/profile')}}">
-                <i class="fa fa-gears"></i> <span>Cấu hình</span> <small class="label pull-right bg-blue">set up </small>
+                <i class="fa fa-gears"></i> <span>Cấu hình</span> <small class="label pull-right bg-blue">setup </small>
               </a>
             </li>
              @endif

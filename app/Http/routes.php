@@ -120,6 +120,31 @@
 			Route::post('/do_edit_video/{id}', 'Admin\VideoController@do_edit_video');
 			Route::get('/delete_video/{id}','Admin\VideoController@delete_video');
 
+			//===========================  Link ====================================
+			Route::get('/link','Admin\LinkController@list_link');
+			Route::get('/add_link','Admin\LinkController@add_link');
+			Route::post('/do_add_link', 'Admin\LinkController@do_add_link');
+			Route::get('/edit_link/{id}','Admin\LinkController@edit_link');
+			Route::post('/do_edit_link/{id}', 'Admin\LinkController@do_edit_link');
+			Route::get('/delete_link/{id}','Admin\LinkController@delete_link');
+
+			//===========================  Q&A ====================================
+			Route::get('/qa','Admin\QaController@list_qa');
+			Route::get('/add_qa','Admin\QaController@add_qa');
+			Route::post('/do_add_qa', 'Admin\QaController@do_add_qa');
+			Route::get('/edit_qa/{id}','Admin\QaController@edit_qa');
+			Route::post('/do_edit_qa/{id}', 'Admin\QaController@do_edit_qa');
+			Route::get('/delete_qa/{id}','Admin\QaController@delete_qa');
+
+			//===========================  Contact ====================================
+			Route::get('/contact','Admin\ContactController@list_contact');
+			Route::get('/add_contact','Admin\ContactController@add_contact');
+			Route::post('/do_add_contact', 'Admin\ContactController@do_add_contact');
+			Route::get('/edit_contact/{id}','Admin\ContactController@edit_contact');
+			Route::post('/do_edit_contact/{id}', 'Admin\ContactController@do_edit_contact');
+			Route::get('/delete_contact/{id}','Admin\ContactController@delete_contact');
+
+
 		});
 
 //=================================================================

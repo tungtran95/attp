@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2016 at 10:32 AM
+-- Generation Time: Jul 29, 2016 at 02:39 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -152,6 +152,21 @@ CREATE TABLE `tbl_category_service` (
 INSERT INTO `tbl_category_service` (`pk_category_service_id`, `c_name`, `c_icon`, `c_slug`, `c_lang`, `c_enable`, `c_description`) VALUES
 (1, 'Trang thiết bị', '<i class="fa fa-cogs" aria-hidden="true"></i>', 'trang-thiet-bi', 'vn', 1, NULL),
 (2, 'Năng lực hoạt động', '<i class="fa fa-puzzle-piece" aria-hidden="true"></i>', 'nang-luc-hoat-dong', 'vn', 1, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_contact`
+--
+
+CREATE TABLE `tbl_contact` (
+  `pk_contact_id` int(11) NOT NULL,
+  `c_name` varchar(255) DEFAULT NULL,
+  `c_email` varchar(255) DEFAULT NULL,
+  `c_content` text,
+  `c_date` varchar(255) NOT NULL,
+  `c_status` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -799,6 +814,23 @@ INSERT INTO `tbl_profile` (`pk_profile_id`, `c_name`, `c_description`, `c_conten
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_qa`
+--
+
+CREATE TABLE `tbl_qa` (
+  `pk_qa_id` int(11) NOT NULL,
+  `c_question` varchar(500) DEFAULT NULL,
+  `c_answer` text,
+  `c_name` varchar(255) DEFAULT NULL,
+  `c_email` varchar(255) DEFAULT NULL,
+  `c_date` varchar(255) DEFAULT NULL,
+  `c_status` int(11) NOT NULL DEFAULT '0',
+  `c_lang` varchar(11) NOT NULL DEFAULT 'vn'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_science`
 --
 
@@ -861,8 +893,17 @@ CREATE TABLE `tbl_video` (
   `c_slug` varchar(500) DEFAULT NULL,
   `c_date` varchar(255) DEFAULT NULL,
   `c_lang` varchar(11) NOT NULL DEFAULT 'vn',
-  `c_code` varchar(255) DEFAULT NULL
+  `c_code` varchar(255) DEFAULT NULL,
+  `c_description` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_video`
+--
+
+INSERT INTO `tbl_video` (`pk_video_id`, `c_name`, `c_slug`, `c_date`, `c_lang`, `c_code`, `c_description`) VALUES
+(1, 'Sản xuất, kinh doanh, tiêu dùng thực phẩm sạch vì sức khỏe cộng đồng', 'san-xuat-kinh-doanh-tieu-dung-thuc-pham-sach-vi-suc-khoe-cong-dong', '27/07/2016', 'vn', '86299660', 'Sản xuất, kinh doanh, ti&ecirc;u d&ugrave;ng thực phẩm sạch v&igrave; sức khỏe cộng đồng'),
+(3, 'Safety Food', 'safety-food', '29/07/2016', 'vn', '86975897', 'Sản xuất kinh doanh ti&ecirc;u d&ugrave;ng thực phẩm sạch. V&igrave; sức khỏe cộng đồng.');
 
 -- --------------------------------------------------------
 
@@ -927,6 +968,12 @@ ALTER TABLE `tbl_category_service`
   ADD PRIMARY KEY (`pk_category_service_id`);
 
 --
+-- Indexes for table `tbl_contact`
+--
+ALTER TABLE `tbl_contact`
+  ADD PRIMARY KEY (`pk_contact_id`);
+
+--
 -- Indexes for table `tbl_document`
 --
 ALTER TABLE `tbl_document`
@@ -951,6 +998,12 @@ ALTER TABLE `tbl_other`
 --
 ALTER TABLE `tbl_profile`
   ADD PRIMARY KEY (`pk_profile_id`);
+
+--
+-- Indexes for table `tbl_qa`
+--
+ALTER TABLE `tbl_qa`
+  ADD PRIMARY KEY (`pk_qa_id`);
 
 --
 -- Indexes for table `tbl_science`
@@ -1002,6 +1055,11 @@ ALTER TABLE `tbl_category_other`
 ALTER TABLE `tbl_category_service`
   MODIFY `pk_category_service_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `tbl_contact`
+--
+ALTER TABLE `tbl_contact`
+  MODIFY `pk_contact_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `tbl_document`
 --
 ALTER TABLE `tbl_document`
@@ -1022,6 +1080,11 @@ ALTER TABLE `tbl_other`
 ALTER TABLE `tbl_profile`
   MODIFY `pk_profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `tbl_qa`
+--
+ALTER TABLE `tbl_qa`
+  MODIFY `pk_qa_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `tbl_science`
 --
 ALTER TABLE `tbl_science`
@@ -1035,7 +1098,7 @@ ALTER TABLE `tbl_service`
 -- AUTO_INCREMENT for table `tbl_video`
 --
 ALTER TABLE `tbl_video`
-  MODIFY `pk_video_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pk_video_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --

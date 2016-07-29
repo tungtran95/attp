@@ -91,7 +91,10 @@
                       <label for="exampleInputEmail1">Yahoo</label>
                       <input type="text" class="form-control" id="c_yahoo" required name="c_yahoo" value="{{ $arr->c_yahoo }}" >
                     </div>
-
+                     <div class="form-group">
+                      <label for="exampleInputEmail1">Flickr ảnh</label>
+                      <input type="text" class="form-control" id="c_yahoo" required name="c_flickr" value="{{ $arr->c_flickr }}" >
+                    </div>
                  	</div><!-- /.box-body -->
 
                   <div class="box-footer">
